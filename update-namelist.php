@@ -28,10 +28,9 @@
 	</h1>
 	
 	<form action="update-namelist-run.php" method="post">
+			<h3 style="font-size:22px;">對象姓名:<input type ="text" value="<?php echo $name;?>" name="name" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
 			
-			<h3 style="font-size:22px;">對象姓名:<input type ="text" value="$name" name="name" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
-			
-			<h3 style="font-size:22px;">手機:<input type ="text" value="$phone" name="phone" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
+			<h3 style="font-size:22px;">手機:<input type ="text" value="<?php echo $phone; ?>" name="phone" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
 			
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='CUD-namelist-show.php'">

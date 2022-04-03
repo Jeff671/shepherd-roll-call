@@ -50,10 +50,10 @@ EOF;
 	</h1>
 	
 	<form action="update-record.php" method="post">
-			<h3 style="font-size:22px;">填表者姓名:<input type ="text" value="$visitor" name="visitor" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
+			<h3 style="font-size:22px;">填表者姓名:<input type ="text" value="<?php echo $visitor; ?>" name="visitor" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
 			
 			<h3 style="font-size:22px;"><label for="bookdate">填表日期：</label>
-			<input type="date" value="$date" name="date" style="margin:0px 0px 0px 30px;"></h3>
+			<input type="date" value="<?php echo $date;?>" name="date" style="margin:0px 0px 0px 30px;"></h3>
 			
 			<h3 style="font-size:22px;">回訪對象姓名:
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
@@ -72,19 +72,19 @@ EOF;
 					$a = $row["id"]; $b = $row["name"];
 					if($a==$nameid)
 					{
-						echo "<option value=".$a." SELECTED>".$b."</option>";
+						echo "<option value='$a' SELECTED>$b</option>";
 					}
-					else echo "<option value=".$a.">".$b."</option>";
+					else echo "<option value='$a'>$b</option>";
 					}
 				pg_close($db);
 			?> 
 			</select></h3>
 			
 			<h3 style="font-size:22px;">回訪情形:
-			<textarea value="$situation" name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"></textarea></h3>
+			<textarea value="<?php echo $situation; ?>" name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"></textarea></h3>
 			
 			<h3 style="font-size:22px;">備註:
-			<textarea name="remark" value="$remark" style="height:80px; width:300px; margin:0px 0px 0px 30px;"></textarea></h3>
+			<textarea name="remark" value="<?php echo $remark; ?>" style="height:80px; width:300px; margin:0px 0px 0px 30px;"></textarea></h3>
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='U&D-visit-show.php'">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="刪除" onclick="alertscreen()">
