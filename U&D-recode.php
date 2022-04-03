@@ -18,7 +18,6 @@
 <center><h1 style="font-size:40px;">探望名單線上記錄系統</h1>
 <div class="content-wrapper clearfix">
 <!-- 搜尋欲修改的資料內容 並顯示在各元件內-->
-
 	<h1 class="content-title"  style="font-size:30px;">
 		<select style="font-size:30px;" onChange="location = this.options[this.selectedIndex].value;">
 			<option value="index.html" >出訪紀錄查詢 </option>
@@ -27,7 +26,23 @@
 			<option value="CUD-namelist-show.php" >對象資訊編輯 </option>
 		</select>
 	</h1>
-	
+	<?php
+	$sql =<<<EOF 
+		SELECT nameid,visitor,date,situation,remark from visitinfo where name='$n',date='$d',visitor='$v';
+EOF;
+				$ret = pg_query($db, $sql);
+				if(!$ret){
+				echo pg_last_error($db);
+				echo "查無結果";
+				exit;
+				} 
+				while($row = pg_fetch_row($ret)){
+					$nameid=$row[0];$visitor="$row[1]";$date="$row[2]";$situation="$row[3]";$remark="$row[4]";
+					
+					}
+				
+			?> 
+	?>
 	<form action="update-record.php" method="post">
 			<h3 style="font-size:22px;">填表者姓名:<input type ="text" value="<?php echo $visitor; ?>" name="visitor" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
 			
@@ -38,6 +53,7 @@
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
 			<option style="font-size:22px;" value="0" >請選擇姓名 </option>
 			<?php
+			setcookie('nameid',$nameid);
 			$sql =<<<EOF
 				SELECT id,name from namelist;
 EOF;
