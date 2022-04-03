@@ -69,12 +69,11 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					$a = $row["id"]; $b = $row["name"];
 					if($a==$nameid)
 					{
-						echo "<option value='$a' SELECTED>$b</option>";
+						echo "<option value='$row[0]' SELECTED>$row[1]</option>";
 					}
-					else echo "<option value='$a'>$b</option>";
+					else echo "<option value='$row[0]'>$row[1]</option>";
 					}
 				pg_close($db);
 			?> 

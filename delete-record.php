@@ -22,7 +22,7 @@
 	</h1>
 <?php	
 	 $sql =<<<EOF
-      delete from visitinfo where nameid=$n,visitor=$v,date=$d;
+      delete * from visitinfo where nameid=$n,visitor=$v,date=$d;
 EOF;
 echo "刪除紀錄成功!";
 ?> 

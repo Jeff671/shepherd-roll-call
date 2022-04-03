@@ -22,7 +22,7 @@
 	</h1>
 <?php	
  $sql =<<<EOF
-      delete from namelist where id=$id;
+      delete * from namelist as a inner join visitinfo as b on a.id=b.nameid where id=$id;
 EOF;
 echo "刪除紀錄成功!";
 ?> 
