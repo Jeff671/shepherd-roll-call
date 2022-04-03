@@ -69,7 +69,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					if($a==$nameid)
+					if($row[0]==$nameid)
 					{
 						echo "<option value='$row[0]' SELECTED>$row[1]</option>";
 					}
