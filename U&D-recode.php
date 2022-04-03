@@ -28,7 +28,7 @@
 	</h1>
 	<?php
 	$sql =<<<EOF 
-		SELECT nameid,visitor,date,situation,remark from visitinfo where name='$n',date='$d',visitor='$v';
+		SELECT nameid,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where name=$n,date=$d,visitor=$v;
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
