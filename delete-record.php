@@ -22,7 +22,7 @@
 	</h1>
 <?php	
 	 $sql =<<<EOF
-      delete * from visitinfo where nameid=$n,visitor=$v,date=$d;
+      delete * from visitinfo where nameid=$n,visitor='$v',date='$d';
 EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);

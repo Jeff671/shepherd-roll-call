@@ -44,12 +44,14 @@ EOF;
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='create-visit-record.php'};</script>";
 		}
 	}
-	pg_close($db);
+	
 	
 	 $sql =<<<EOF
       INSERT INTO visitinfo (nameid,visitor,date,situation,remark)
       VALUES ($nameid,'$visitor','$date','$situation','$remark');
 EOF;
+$ret = pg_query($db, $sql);
+pg_close($db);
 echo "新增紀錄成功!";
 ?> 
 </div><!--/ .content-wrapper-->
