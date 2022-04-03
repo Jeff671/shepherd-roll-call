@@ -18,22 +18,7 @@
 <center><h1 style="font-size:40px;">探望名單線上記錄系統</h1>
 <div class="content-wrapper clearfix">
 <!-- 搜尋欲修改的資料內容 並顯示在各元件內-->
-<?php
-		$sql =<<<EOF 
-		SELECT nameid,visitor,date,situation,remark from visitinfo where name='$n',date='$d',visitor='$v';
-EOF;
-				$ret = pg_query($db, $sql);
-				if(!$ret){
-				echo pg_last_error($db);
-				echo "查無結果";
-				exit;
-				} 
-				while($row = pg_fetch_row($ret)){
-					$nameid=$row[0];$visitor="$row[1]";$date="$row[2]";$situation="$row[3]";$remark="$row[4]";
-					setcookie('nameid',$nameid);
-					}
-				
-			?> 
+
 	<h1 class="content-title"  style="font-size:30px;">
 		<select style="font-size:30px;" onChange="location = this.options[this.selectedIndex].value;">
 			<option value="index.html" >出訪紀錄查詢 </option>
@@ -52,7 +37,25 @@ EOF;
 			<h3 style="font-size:22px;">回訪對象姓名:
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
 			<option style="font-size:22px;" value="0" >請選擇姓名 </option>
-			
+			<?php
+			$sql =<<<EOF
+				SELECT id,name from namelist;
+EOF;
+				$ret = pg_query($db, $sql);
+				if(!$ret){
+				echo pg_last_error($db);
+				echo "查無結果";
+				exit;
+				} 
+				while($row = pg_fetch_row($ret)){
+					if($row[0]==$nameid)
+					{
+						echo "<option value='$row[0]' SELECTED>$row[1]</option>";
+					}
+					else echo "<option value='$row[0]'>$row[1]</option>";
+					}
+				pg_close($db);
+			?> 
 			</select></h3>
 			
 			<h3 style="font-size:22px;">回訪情形:
