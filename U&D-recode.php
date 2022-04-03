@@ -3,8 +3,10 @@
 	$n = $_GET["id"];
 	$v=$_GET["visitor"];
 	$d = $_GET["date"];
+	$s = $_GET["situation"];
+	$r = $_GET["remark"];
 	setcookie('nameid',$n);setcookie('visitor',$v);setcookie('date',$d);
-	$visitor="0";$date="0"; $situation="0";$remark="0";
+	
 ?>
 
 <html>
@@ -26,28 +28,13 @@
 			<option value="CUD-namelist-show.php" >對象資訊編輯 </option>
 		</select>
 	</h1>
-	<?php
-	$sql =<<<EOF 
-		SELECT situation,remark from visitinfo where nameid='$n',date='$d',visitor='$v';
-EOF;
-				$ret = pg_query($db, $sql);
-				if(!$ret){
-				echo pg_last_error($db);
-				echo "查無結果";
-				exit;
-				} 
-				while($row = pg_fetch_row($ret)){
-					$situation="$row[0]";$remark="$row[1]";
-					
-					}
-				
-			?> 
-	?>
+	
+	
 	<form action="update-record.php" method="post">
-			<h3 style="font-size:22px;">填表者姓名:<input type ="text" value="<?php echo $visitor; ?>" name="visitor" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
+			<h3 style="font-size:22px;">填表者姓名:<input type ="text" value="<?php echo $v; ?>" name="visitor" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
 			
 			<h3 style="font-size:22px;"><label for="bookdate">填表日期：</label>
-			<input type="date" value="<?php echo $date;?>" name="date" style="margin:0px 0px 0px 30px;"></h3>
+			<input type="date" value="<?php echo $d;?>" name="date" style="margin:0px 0px 0px 30px;"></h3>
 			
 			<h3 style="font-size:22px;">回訪對象姓名:
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
@@ -74,10 +61,10 @@ EOF;
 			</select></h3>
 			
 			<h3 style="font-size:22px;">回訪情形:
-			<textarea value="<?php echo $situation; ?>" name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"></textarea></h3>
+			<textarea value="<?php echo $s; ?>" name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"></textarea></h3>
 			
 			<h3 style="font-size:22px;">備註:
-			<textarea name="remark" value="<?php echo $remark; ?>" style="height:80px; width:300px; margin:0px 0px 0px 30px;"></textarea></h3>
+			<textarea name="remark" value="<?php echo $r; ?>" style="height:80px; width:300px; margin:0px 0px 0px 30px;"></textarea></h3>
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='U&D-visit-show.php'">&nbsp;&nbsp;&nbsp;
 			<a href="javascript:if (confirm('確定刪除該筆資料？')) location.href='delete-record.php'">刪除</a>

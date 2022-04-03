@@ -44,7 +44,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]&situation=$row[4]&remark=$row[5]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
@@ -60,7 +60,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]&situation=$row[4]&remark=$row[5]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
@@ -76,7 +76,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]&situation=$row[4]&remark=$row[5]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
@@ -92,7 +92,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]&situation=$row[4]&remark=$row[5]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
