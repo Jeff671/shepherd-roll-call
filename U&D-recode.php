@@ -61,10 +61,10 @@ EOF;
 			</select></h3>
 			
 			<h3 style="font-size:22px;">回訪情形:
-			<textarea value="<?php echo $s; ?>" name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"></textarea></h3>
+			<textarea  name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"><?php echo $s; ?></textarea></h3>
 			
 			<h3 style="font-size:22px;">備註:
-			<textarea name="remark" value="<?php echo $r; ?>" style="height:80px; width:300px; margin:0px 0px 0px 30px;"></textarea></h3>
+			<textarea name="remark"  style="height:80px; width:300px; margin:0px 0px 0px 30px;"><?php echo $r; ?></textarea></h3>
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='U&D-visit-show.php'">&nbsp;&nbsp;&nbsp;
 			<a href="javascript:if (confirm('確定刪除該筆資料？')) location.href='delete-record.php'">刪除</a>
