@@ -52,25 +52,7 @@ EOF;
 			<h3 style="font-size:22px;">回訪對象姓名:
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
 			<option style="font-size:22px;" value="0" >請選擇姓名 </option>
-			<?php	
-			$sql =<<<EOF
-				SELECT id,name from namelist;
-EOF;
-				$ret = pg_query($db, $sql);
-				if(!$ret){
-				echo pg_last_error($db);
-				echo "查無結果";
-				exit;
-				} 
-				while($row = pg_fetch_row($ret)){
-					if($row[0]==$nameid)
-					{
-						echo "<option value='$row[0]' SELECTED>$row[1]</option>";
-					}
-					else echo "<option value='$row[0]'>$row[1]</option>";
-					}
-				pg_close($db);
-			?> 
+			
 			</select></h3>
 			
 			<h3 style="font-size:22px;">回訪情形:
@@ -80,6 +62,7 @@ EOF;
 			<textarea name="remark" value="<?php echo $remark; ?>" style="height:80px; width:300px; margin:0px 0px 0px 30px;"></textarea></h3>
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='U&D-visit-show.php'">&nbsp;&nbsp;&nbsp;
+			<a href="javascript:if (confirm('確定刪除該筆資料？')) location.href='delete-record.php'">刪除</a>
 			</form>
 </div><!-- -->
 </center>
