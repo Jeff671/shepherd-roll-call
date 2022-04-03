@@ -24,7 +24,10 @@
 	 $sql =<<<EOF
       delete * from visitinfo where nameid=$n,visitor=$v,date=$d;
 EOF;
+$ret = pg_query($db, $sql);
+pg_close($db);
 echo "刪除紀錄成功!";
+
 ?> 
 </div><!--/ .content-wrapper-->
 </center>

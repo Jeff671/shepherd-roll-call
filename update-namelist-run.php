@@ -31,6 +31,8 @@ if($name==null || $phone==null )
 	 $sql =<<<EOF
       update visitinfo set name=$name,phone=$phone where id=$id;
 EOF;
+$ret = pg_query($db, $sql);
+pg_close($db);
 echo "更新紀錄成功!";
 ?> 
 </div><!--/ .content-wrapper-->

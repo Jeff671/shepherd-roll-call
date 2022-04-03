@@ -24,6 +24,8 @@
  $sql =<<<EOF
       delete * from namelist as a inner join visitinfo as b on a.id=b.nameid where id=$id;
 EOF;
+$ret = pg_query($db, $sql);
+pg_close($db);
 echo "刪除紀錄成功!";
 ?> 
 </div><!--/ .content-wrapper-->

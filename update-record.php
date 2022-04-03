@@ -34,6 +34,8 @@ if($nameid==null || $visitor==null || $date==null || $situation==null)
 	 $sql =<<<EOF
       update visitinfo set nameid=$nameid,visitor=$visitor,date=$date,situation=$situation,remark=$remark where nameid=$n,visitor=$v,date=$d;
 EOF;
+$ret = pg_query($db, $sql);
+pg_close($db);
 echo "更新紀錄成功!";
 ?> 
 </div><!--/ .content-wrapper-->

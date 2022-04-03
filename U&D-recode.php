@@ -35,7 +35,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					$nameid="$row[0]";$visitor="$row[1]";$date="$row[2]";$situation="$row[3]";$remark="$row[4]";
+					$nameid=$row[0];$visitor="$row[1]";$date="$row[2]";$situation="$row[3]";$remark="$row[4]";
 					setcookie('nameid',$nameid);
 					}
 				pg_close($db);
