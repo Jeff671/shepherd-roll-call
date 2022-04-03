@@ -39,8 +39,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					$a = $row[0]; $b = $row[1];
-					echo "<option value="$a">$b</option>";
+					echo "<option value='$row[0]'>$row[1]</option>";
 					}
 				pg_close($db);
 			?> 
