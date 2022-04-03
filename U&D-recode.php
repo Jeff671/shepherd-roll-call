@@ -1,10 +1,10 @@
 <?php
 	include ("connect.php");
-	$n = $_GET["name"];
+	$n = $_GET["id"];
 	$v=$_GET["visitor"];
 	$d = $_GET["date"];
-	setcookie('visitor',$v);setcookie('date',$d);
-	$visitor="0";$date="0"; $nameid="0";$situation="0";$remark="0";
+	setcookie('nameid',$n);setcookie('visitor',$v);setcookie('date',$d);
+	$visitor="0";$date="0"; $situation="0";$remark="0";
 ?>
 
 <html>
@@ -28,7 +28,7 @@
 	</h1>
 	<?php
 	$sql =<<<EOF 
-		SELECT nameid,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where name='$n',date='$d',visitor='$v';
+		SELECT situation,remark from visitinfo where nameid='$n',date='$d',visitor='$v';
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
@@ -37,7 +37,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					$nameid=$row[0];$visitor="$row[1]";$date="$row[2]";$situation="$row[3]";$remark="$row[4]";
+					$situation="$row[0]";$remark="$row[1]";
 					
 					}
 				
@@ -53,7 +53,6 @@ EOF;
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
 			<option style="font-size:22px;" value="0" >請選擇姓名 </option>
 			<?php
-			setcookie('nameid',$nameid);
 			$sql =<<<EOF
 				SELECT id,name from namelist;
 EOF;
@@ -64,7 +63,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					if($row[0]==$nameid)
+					if($row[0]==$n)
 					{
 						echo "<option value='$row[0]' SELECTED>$row[1]</option>";
 					}

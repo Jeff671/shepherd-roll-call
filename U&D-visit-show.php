@@ -35,7 +35,7 @@
 			if($name!=null && $date==null)
 			{
 				$sql =<<<EOF
-				SELECT name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where visitor LIKE '$name%' order by date;
+				SELECT id,name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where visitor LIKE '$name%' order by date;
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
@@ -44,14 +44,14 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><a href='U&D-recode.php?name=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
 			else if($name==null && $date!=null)
 			{
 				$sql =<<<EOF
-				SELECT name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where date LIKE '$date%' order by date;
+				SELECT id,name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where date LIKE '$date%' order by date;
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
@@ -60,14 +60,14 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><a href='U&D-recode.php?name=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
 			else if($name!=null && $date!=null)
 			{
 				$sql =<<<EOF
-				SELECT name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where visitor LIKE '$name%', date LIKE '$date%' order by date;
+				SELECT id,name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid where visitor LIKE '$name%', date LIKE '$date%' order by date;
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
@@ -76,14 +76,14 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><a href='U&D-recode.php?name=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
 			else
 			{
 				$sql =<<<EOF
-				SELECT name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid order by date;
+				SELECT id,name,phone,visitor,date,situation,remark from namelist as a inner join visitinfo as b on a.id=b.nameid order by date;
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
@@ -92,8 +92,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					$a=$row[0];$b=$row[2];$c=$row[3];
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><a href='U&D-recode.php?name=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[1] . "</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><td><a href='U&D-recode.php?id=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
