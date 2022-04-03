@@ -27,7 +27,7 @@
 		<input type ="submit" value="新增名單">
 		</p>
 	</form>
-	<table width="580" align="left" cellpadding="3" cellspacing="0" border="1">
+	<table width="580" align="center" cellpadding="3" cellspacing="0" border="1">
 		<tr align=center><td width="60">編號</td><td width="100">對象姓名</td><td width = "200">電話</td><td width = "60">修改</td><td width = "60">刪除</td></tr>
 		<?php
 		$sql =<<<EOF

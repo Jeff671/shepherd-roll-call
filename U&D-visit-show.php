@@ -29,7 +29,7 @@
 		<input type ="submit" value="送出">
 		</p>
 	</form>
-	<table width="580" align="left" cellpadding="3" cellspacing="0" border="1">
+	<table width="580" align="center" cellpadding="3" cellspacing="0" border="1">
 		<tr align=center><td width="100">對象姓名</td><td width = "200">電話</td><td width="100">探訪者</td><td width = "200">日期</td><td width = "300">情&nbsp形</td><td width = "100">備&nbsp註</td><td width = "100">修改&刪除</td></tr>
 		<?php
 			if($name!=null && $date==null)
@@ -92,7 +92,8 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><input type="button" value="編輯" onclick="location.href='update&delete-recode.php?name=$row[0]?visitor=$row[2]?date=$row[3]'"></td></tr>";
+					$a=$row[0];$b=$row[2];$c=$row[3];
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td><a href='U&D-recode.php?name=$row[0]&visitor=$row[2]&date=$row[3]'>編輯</a></td></tr>";
 					}
 				pg_close($db);
 			}
