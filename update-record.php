@@ -28,7 +28,7 @@
 <?php	
 if($nameid==null || $visitor==null || $date==null || $situation==null)
 {
-	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='U&D-record.php'};</script>";
+	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='U&D-record.php?id=$nameid&visitor=$visitor&date=$date&situation=$situation&remark=$remark'};</script>";
 	return 0;
 }
 else
