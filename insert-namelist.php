@@ -23,10 +23,10 @@
 <?php	
 if($name==null || $phone==null)
 {
-	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='create-visit-record.php'};</script>";
+	echo "<script>if(confirm('請確實填寫對象姓名與手機')){document.location.href='CUD-namelist-show.php'};</script>";
 }
 	$sql =<<<EOF
-	SELECT * from namelist;
+	SELECT name,phone from namelist;
 EOF;
 	$ret = pg_query($db, $sql);
 	if(!$ret){
@@ -35,17 +35,19 @@ EOF;
 	exit;
 	} 
 	while($row = pg_fetch_row($ret)){
-		if($row[1]==$name && $row[2]==$phone)
+		if($row["name"]==$name && $row["phone"]==$phone)
 		{
-			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='create-visit-record.php'};</script>";
+			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='CUD-namelist-show.php'};</script>";
 		}
 	}
-	pg_close($db);
+	
 	
 	 $sql =<<<EOF
       INSERT INTO namelist (name,phone)
       VALUES ('$name','$phone');
 EOF;
+$ret = pg_query($db, $sql);
+pg_close($db);
 echo "新增紀錄成功!";
 ?> 
 </div><!--/ .content-wrapper-->

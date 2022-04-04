@@ -1,6 +1,6 @@
 <?php
 	include ("connect.php");
-	$n=$_COOKIE["nameid"];$v=$_COOKIE["visitor"];$d=$_COOKIE["date"];
+	$n=$_COOKIE['nameid'];$v=$_COOKIE['visitor'];$d=$_COOKIE['date'];
 ?>
 <html>
 <head>
@@ -22,7 +22,7 @@
 	</h1>
 <?php	
 	 $sql =<<<EOF
-      delete * from visitinfo where nameid=$n,visitor='$v',date='$d';
+      delete from visitinfo where nameid=$n,visitor='$v',date='$d';
 EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);

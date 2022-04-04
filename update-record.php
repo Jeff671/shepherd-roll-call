@@ -5,7 +5,7 @@
 	$date = $_POST["date"];
 	$situation = $_POST["situation"];
 	$remark = $_POST["remark"];
-	$n=$_COOKIE["nameid"];$v=$_COOKIE["visitor"];$d=$_COOKIE["date"];
+	$n=$_COOKIE['nameid'];$v=$_COOKIE['visitor'];$d=$_COOKIE['date'];
 ?>
 <html>
 <head>

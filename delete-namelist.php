@@ -26,6 +26,7 @@
 EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);
+echo "$id <br />";
 echo "刪除紀錄成功!";
 ?> 
 </div><!--/ .content-wrapper-->
