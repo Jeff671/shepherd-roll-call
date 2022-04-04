@@ -40,7 +40,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td><a href='update-namelist.php?id=$row[0]&name=$row[1]&remark=$row[2]'>編輯</a></td><td><a href='delete-namelist.php?id=$row[0]' onclick='return(confirm('確定刪除該筆資料？'))'>刪除</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td><a href='update-namelist.php?id=$row[0]&name=$row[1]&remark=$row[2]'>編輯</a></td><td><a href="javascript:if (confirm('確定刪除該筆資料？')) location.href='delete-namelist.php?id=$row[0]'">刪除</a></td></tr>";
 					}
 				pg_close($db);
 
