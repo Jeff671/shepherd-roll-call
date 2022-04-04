@@ -31,7 +31,7 @@
 		<tr align=center><td width="60">編號</td><td width="200">對象姓名</td><td width = "200">電話</td><td width = "60">修改</td><td width = "60">刪除</td></tr>
 		<?php
 		$sql =<<<EOF
-				SELECT * from namelist;
+				SELECT * from namelist order by id;
 EOF;
 				$ret = pg_query($db, $sql);
 				if(!$ret){
