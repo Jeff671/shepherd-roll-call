@@ -21,7 +21,7 @@
 	</h1>
 	<form action="insert-namelist.php" method="post">
 		<p style="font-size:25px;">出訪對象:
-		<input type ="text" name="name" style="height:25px; width:100px;"><br />
+		<input type ="text" name="name" style="height:25px; width:100px;">&nbsp;
 		手機:
 		<input type ="text" name="phone" style="height:25px; width:100px;">&nbsp;
 		<input type ="submit" value="新增名單">

@@ -10,17 +10,17 @@
 <div class="content-wrapper clearfix">
 	<h1 class="content-title"  style="font-size:30px;">
 		<select style="font-size:30px;" onChange="location = this.options[this.selectedIndex].value;">
-			<option value="index.html" >出訪紀錄查詢 </option>
+			<option value="index.html" SELECTED>出訪紀錄查詢 </option>
 			<option value="create-visit-record.php" >出訪紀錄填寫 </option>
-			<option value="U&D-visit-record.html" SELECTED>修改&刪除出訪紀錄 </option>
+			<option value="U&D-visit-record.html" >修改&刪除出訪紀錄 </option>
 			<option value="CUD-namelist-show.php" >對象資訊編輯 </option>
 		</select>
 	</h1>
-	<form action="U&D-visit-show.php" method="post">
-		<p style="font-size:25px;">訪問者查詢:
-		<input type ="text" name="name" style="height:25px; width:100px;"><br />
+	<form action="visit-search-show.php" method="post">
+		<p style="font-size:25px;">出訪對象查詢:
+		<input type ="text" name="name" style="height:25px; width:100px;">&nbsp;
 		<label for="bookdate">日期查詢：</label>
-		<input type="month" name="date" style="height:25px;">&nbsp&nbsp
+		<input type="month" name="date" style="height:25px;">&nbsp;&nbsp;
 		<input type ="submit" value="搜尋">
 		</p>
 	</form>

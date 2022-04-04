@@ -18,7 +18,7 @@
 	</h1>
 	<form action="U&D-visit-show.php" method="post">
 		<p style="font-size:25px;">訪問者查詢:
-		<input type ="text" name="name" style="height:25px; width:100px;"><br />
+		<input type ="text" name="name" style="height:25px; width:100px;">&nbsp
 		<label for="bookdate">日期查詢：</label>
 		<input type="month" name="date" style="height:25px;">&nbsp&nbsp
 		<input type ="submit" value="搜尋">
