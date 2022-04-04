@@ -1,7 +1,3 @@
-<?php
-	include ("connect.php");
-	$n=$_COOKIE['nameid'];$v=$_COOKIE['visitor'];$d=$_COOKIE['date'];
-?>
 <html>
 <head>
 <meta charset="utf-8">
@@ -10,25 +6,25 @@
 <title>44會所探望名單線上記錄系統</title>
 </head>
 <body style="background-color: #ebeeeb;">
-<center><h1 style="font-size:40px;">44會所探望名單線上記錄系統</h1>
+<center><h1 style="font-size:40px;">探望名單線上記錄系統</h1>
 <div class="content-wrapper clearfix">
 	<h1 class="content-title"  style="font-size:30px;">
 		<select style="font-size:30px;" onChange="location = this.options[this.selectedIndex].value;">
-			<option value="index.html" >出訪紀錄查詢 </option>
+			<option value="index.html" SELECTED>出訪紀錄查詢 </option>
 			<option value="create-visit-record.php" >出訪紀錄填寫 </option>
-			<option value="U&D-visit-record.html" SELECTED>修改&刪除出訪紀錄 </option>
-			<option value="CUD-namelist-show.php" >被看望者資訊編輯 </option>
+			<option value="U&D-visit-record.html" >修改&刪除出訪紀錄 </option>
+			<option value="CUD-namelist-show.php" >對象資訊編輯 </option>
 		</select>
 	</h1>
-<?php	
-	 $sql =<<<EOF
-      delete from visitinfo where nameid=$n and visitor='$v' and date='$d';
-EOF;
-$ret = pg_query($db, $sql);
-pg_close($db);
-echo "刪除紀錄成功!";
-
-?> 
+	<form action="visit-search-show.php" method="post">
+		<p style="font-size:25px;">被看望者查詢:
+		<input type ="text" name="name" style="height:25px; width:100px;">
+		<br />
+		<label for="bookdate">日期查詢：</label>
+		<input type="month" name="date" style="height:25px;">&nbsp;&nbsp;
+		<input type ="submit" value="搜尋">
+		</p>
+	</form>
 </div><!--/ .content-wrapper-->
 </center>
 </body>
