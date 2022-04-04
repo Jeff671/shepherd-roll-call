@@ -44,8 +44,6 @@ EOF;
 			pg_close($db);
 		}
 	}
-	
-}
 $sql =<<<EOF
 				INSERT INTO namelist (name,phone)
 				VALUES ('$name','$phone');
@@ -53,6 +51,8 @@ EOF;
 				$ret = pg_query($db, $sql);
 		pg_close($db);
 		echo "新增紀錄成功!";
+	
+}
 ?> 
 </div><!--/ .content-wrapper-->
 </center>
