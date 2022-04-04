@@ -42,17 +42,19 @@ EOF;
 		{
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='CUD-namelist-show.php'};</script>";
 			pg_close($db);
+			return 0;
 		}
-	}
-	
-}
-$sql =<<<EOF
+		$sql =<<<EOF
 				INSERT INTO namelist (name,phone)
 				VALUES ('$name','$phone');
 EOF;
 				$ret = pg_query($db, $sql);
 		pg_close($db);
 		echo "新增紀錄成功!";
+	}
+	
+}
+
 ?> 
 </div><!--/ .content-wrapper-->
 </center>
