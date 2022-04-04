@@ -24,6 +24,7 @@
 if($name==null || $phone==null)
 {
 	echo "<script>if(confirm('請確實填寫對象姓名與手機')){document.location.href='CUD-namelist-show.php'};</script>";
+	return 0;
 }
 else
 {
@@ -38,20 +39,21 @@ EOF;
 	exit;
 	} 
 	while($row = pg_fetch_row($ret)){
-		while($row[0]==$name && $row[1]==$phone)
+		if($row[0]==$name && $row[1]==$phone)
 		{
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='CUD-namelist-show.php'};</script>";
 			pg_close($db);
 			return 0;
 		}
-		$sql =<<<EOF
+		
+	}
+	$sql =<<<EOF
 				INSERT INTO namelist (name,phone)
 				VALUES ('$name','$phone');
 EOF;
 				$ret = pg_query($db, $sql);
 		pg_close($db);
 		echo "新增紀錄成功!";
-	}
 	
 }
 
