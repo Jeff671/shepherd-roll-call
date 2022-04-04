@@ -32,7 +32,7 @@ if($nameid==null || $visitor==null || $date==null || $situation==null)
 else
 {
 	$sql =<<<EOF
-	SELECT nameid,visitor,date,situation,remark from visitinfo;
+	SELECT nameid,visitor,date,situation from visitinfo;
 EOF;
 	$ret = pg_query($db, $sql);
 	if(!$ret){
@@ -41,7 +41,7 @@ EOF;
 	exit;
 	} 
 	while($row = pg_fetch_row($ret)){
-		if($row[0]==$nameid && $row[1]==$visitor && $row[2]==$date && $row[3]==$situation && $row[4]==$remark)
+		if($row[0]==$nameid && $row[1]==$visitor && $row[2]==$date && $row[3]==$situation)
 		{
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='create-visit-record.php'};</script>";
 			pg_close($db);
