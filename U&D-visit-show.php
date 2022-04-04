@@ -21,7 +21,7 @@
 			<option value="CUD-namelist-show.php" >對象資訊編輯 </option>
 		</select>
 	</h1>
-	<form action="visit-search-show.php" method="post">
+	<form action="U&D-visit-show.php" method="post">
 		<p style="font-size:20px;">訪問者查詢:
 		<input type ="text" name="name" style="width:100px;"><br />
 		<label for="bookdate">日期：</label>
