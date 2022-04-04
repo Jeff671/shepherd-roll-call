@@ -28,6 +28,7 @@
 if($nameid==null || $visitor==null || $date==null || $situation==null)
 {
 	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='create-visit-record.php'};</script>";
+	return 0;
 }
 	$sql =<<<EOF
 	SELECT nameid,visitor,date,situation,remark from visitinfo;
@@ -42,6 +43,7 @@ EOF;
 		if($row["nameid"]==$nameid && $row["visitor"]==$visitor && $row["date"]==$date && $row["situation"]==$situation && $row["remark"]==$remark)
 		{
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='create-visit-record.php'};</script>";
+			return 0;
 		}
 	}
 	
