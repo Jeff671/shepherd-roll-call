@@ -5,7 +5,7 @@
 	$d = $_GET["date"];
 	$s = $_GET["situation"];
 	$r = $_GET["remark"];
-	setcookie('nameid',$n);setcookie('visitor','$v');setcookie('date','$d');
+	setcookie('nameid',$n);setcookie('visitor',$v);setcookie('date',$d);
 	
 ?>
 
