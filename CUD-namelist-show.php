@@ -9,6 +9,13 @@
 <title>44會所探望名單線上記錄系統</title>
 </head>
 <body style="background-color: #ebeeeb;">
+<script>
+function link2nthu() {
+	answer = confirm("確定刪除該筆資料？");
+	if (answer)
+		location.href="delete-namelist.php?id=$row[0]";
+}
+</script>
 <center><h1 style="font-size:40px;">44會所探望名單線上記錄系統</h1>
 <div class="content-wrapper clearfix">
 	<h1 class="content-title"  style="font-size:30px;">
@@ -40,7 +47,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td><a href='update-namelist.php?id=$row[0]&name=$row[1]&remark=$row[2]'>編輯</a></td><td><a href='javascript:if (confirm('確定刪除該筆資料？')) location.href='delete-namelist.php?id=$row[0]''>刪除</a></td></tr>";
+					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td><a href='update-namelist.php?id=$row[0]&name=$row[1]&remark=$row[2]'>編輯</a></td><td><a href='javascript:link2nthu()'>刪除</a></td></tr>";
 					}
 				pg_close($db);
 
