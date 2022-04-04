@@ -31,6 +31,8 @@ if($nameid==null || $visitor==null || $date==null || $situation==null)
 	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='U&D-record.php'};</script>";
 	return 0;
 }
+else
+{
 	//update需有目標(原始的name,date跟visitor)
 	 $sql =<<<EOF
       update visitinfo set nameid=$nameid,visitor='$visitor',date='$date',situation='$situation',remark='$remark' where nameid=$n and visitor='$v' and date='$d';
@@ -38,6 +40,7 @@ EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);
 echo "更新紀錄成功!";
+}
 ?> 
 </div><!--/ .content-wrapper-->
 </center>

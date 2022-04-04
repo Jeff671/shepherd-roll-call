@@ -30,6 +30,8 @@ if($nameid==null || $visitor==null || $date==null || $situation==null)
 	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='create-visit-record.php'};</script>";
 	return 0;
 }
+else
+{
 	$sql =<<<EOF
 	SELECT nameid,visitor,date,situation,remark from visitinfo;
 EOF;
@@ -40,9 +42,10 @@ EOF;
 	exit;
 	} 
 	while($row = pg_fetch_row($ret)){
-		if($row["nameid"]==$nameid && $row["visitor"]==$visitor && $row["date"]==$date && $row["situation"]==$situation && $row["remark"]==$remark)
+		if($row[0]==$nameid && $row[1]==$visitor && $row[2]==$date && $row[3]==$situation && $row[4]==$remark)
 		{
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='create-visit-record.php'};</script>";
+			pg_close($db);
 			return 0;
 		}
 	}
@@ -55,6 +58,7 @@ EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);
 echo "新增紀錄成功!";
+}
 ?> 
 </div><!--/ .content-wrapper-->
 </center>

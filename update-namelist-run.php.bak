@@ -26,6 +26,7 @@
 if($name==null || $phone==null )
 {
 	echo "<script>if(confirm('請確實填寫對象姓名與手機')){document.location.href='update-namelist.php'};</script>";
+	return 0;
 }
 	//update需有目標(原始的name,date跟visitor)
 	 $sql =<<<EOF

@@ -28,6 +28,8 @@ if($name==null || $phone==null )
 	echo "<script>if(confirm('請確實填寫對象姓名與手機')){document.location.href='update-namelist.php'};</script>";
 	return 0;
 }
+else
+{
 	//update需有目標(原始的name,date跟visitor)
 	 $sql =<<<EOF
       update namelist set name='$name',phone='$phone' where id=$id;
@@ -35,6 +37,7 @@ EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);
 echo "更新紀錄成功!";
+}
 ?> 
 </div><!--/ .content-wrapper-->
 </center>

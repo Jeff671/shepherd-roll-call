@@ -29,6 +29,7 @@
 if($nameid==null || $visitor==null || $date==null || $situation==null)
 {
 	echo "<script>if(confirm('請確實填寫填表者姓名、日期、回訪對象姓名與情形')){document.location.href='U&D-record.php'};</script>";
+	return 0;
 }
 	//update需有目標(原始的name,date跟visitor)
 	 $sql =<<<EOF
