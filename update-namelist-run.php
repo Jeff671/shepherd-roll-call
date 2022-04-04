@@ -29,7 +29,7 @@ if($name==null || $phone==null )
 }
 	//update需有目標(原始的name,date跟visitor)
 	 $sql =<<<EOF
-      update visitinfo set name='$name',phone='$phone' where id=$id;
+      update namelist set name='$name',phone='$phone' where id=$id;
 EOF;
 $ret = pg_query($db, $sql);
 pg_close($db);
