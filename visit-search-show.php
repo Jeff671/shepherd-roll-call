@@ -23,7 +23,7 @@
 	</h1>
 	<form action="visit-search-show.php" method="post">
 		<p style="font-size:20px;">被看望者查詢:
-		<input type ="text" name="name" style="width:100px;">&nbsp;
+		<input type ="text" name="name" style="width:100px;"><br />
 		<label for="bookdate">日期：</label>
 		<input type="month" name="date">&nbsp;&nbsp;
 		<input type ="submit" value="送出">
