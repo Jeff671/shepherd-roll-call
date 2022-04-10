@@ -10,10 +10,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link rel="stylesheet" href="style.css" media="screen"/>
-<title>44會所探望名單線上記錄系統</title>
+<title>22會所探望名單線上記錄系統</title>
 </head>
 <body style="background-color: #ebeeeb;">
-<center><h1 style="font-size:40px;">44會所探望名單線上記錄系統</h1>
+<center><h1 style="font-size:40px;">22會所探望名單線上記錄系統</h1>
 <div class="content-wrapper clearfix">
 	<h1 class="content-title"  style="font-size:30px;">
 		<select style="font-size:30px;" onChange="location = this.options[this.selectedIndex].value;">
