@@ -60,7 +60,7 @@ EOF;
 			</select></h3>
 			
 			<h3 style="font-size:22px;">回訪情形:
-			<textarea  name="situation" style="height:80px;width:400px; margin:0px 0px 0px 30px;"><?php echo $s; ?></textarea></h3>
+			<textarea  name="situation" placeholder="請勿輸入任何個人資訊，僅可輸入姓名 例:與某某弟兄/姊妹一同看望，此人狀況目前如何..." style="height:80px;width:400px; margin:0px 0px 0px 30px;"><?php echo $s; ?></textarea></h3>
 			
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='U&D-visit-show.php'">&nbsp;&nbsp;&nbsp;

@@ -30,7 +30,7 @@
 	<form action="update-namelist-run.php" method="post">
 			<h3 style="font-size:22px;">被看望者:<input type ="text" value="<?php echo $name;?>" name="name" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3><br />
 			
-			<h3 style="font-size:22px;">備註:<textarea name="remark" style="height:80px;width:300px; margin:0px 0px 0px 30px;"><?php echo "$remark"; ?></textarea></h3>
+			<h3 style="font-size:22px;">備註:<textarea name="remark" placeholder="請勿輸入任何個人資訊 填寫範例:此人敞開，但對神仍有許多不了解..." style="height:80px;width:300px; margin:0px 0px 0px 30px;"><?php echo "$remark"; ?></textarea></h3>
 			
 			<input type ="submit" value="送出">&nbsp;&nbsp;&nbsp;
 			<input type="button" value="取消" onclick="location.href='CUD-namelist-show.php'">

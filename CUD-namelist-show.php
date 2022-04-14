@@ -30,7 +30,7 @@ function link2nthu(a) {
 		<p style="font-size:25px;">被看望者:
 		<input type ="text" name="name" style="height:25px; width:100px;"><br />
 		備註:
-		<textarea name="remark" style="height:80px;width:300px; margin:0px 0px 0px 30px;"></textarea>
+		<textarea name="remark" placeholder="請勿輸入任何個人資訊 填寫範例:此人敞開，但對神仍有許多不了解..." style="height:80px;width:300px; margin:0px 0px 0px 30px;"></textarea>
 		<input type ="submit" value="新增名單">
 		</p>
 	</form>
