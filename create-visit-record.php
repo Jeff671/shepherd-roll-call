@@ -23,7 +23,17 @@
 			<h3 style="font-size:22px;">看望者姓名:<input type ="text" name="visitor" style="margin:0px 0px 0px 30px; height:30px; width:120px;"></h3>
 			
 			<h3 style="font-size:22px;"><label for="bookdate">填表日期：</label>
-			<input type="date" name="date" style="margin:0px 0px 0px 30px;"></h3>
+			<input type="date" name="date" 
+			max="$(function(){var dtToday = new Date();
+				var month = dtToday.getMonth() + 1;
+				var day = dtToday.getDate();
+				var year = dtToday.getFullYear();
+				if(month < 10)
+					month = '0' + month.toString();
+				if(day < 10)
+					day = '0' + day.toString();
+				var maxDate = year + '-' + month + '-' + day;    
+				$('#txtDate').attr('max', maxDate);});"style="margin:0px 0px 0px 30px;"></h3>
 			
 			<h3 style="font-size:22px;">被看望者姓名:
 			<select name="name" style=" margin:0px 0px 0px 25px; height:30px; width:120px;">
