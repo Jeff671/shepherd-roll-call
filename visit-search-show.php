@@ -30,7 +30,7 @@
 		</p>
 	</form>
 	<table width="580" align="center" cellpadding="3" cellspacing="0" border="1">
-		<tr align=center><td width="200">被看望者</td><td width="200">日期</td><td width = "200">看望者</td><td width = "300">情&nbsp形</td><td width = "300">備&nbsp註</td></tr>
+		<tr align=center><td width="100">被看望者</td><td width="100">日期</td><td width = "100">看望者</td><td width = "500">情&nbsp形</td><td width = "500">備&nbsp註</td></tr>
 		<?php
 			if($name!=null && $date==null)
 			{
@@ -44,7 +44,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
@@ -60,7 +60,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
@@ -76,7 +76,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
@@ -92,7 +92,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}

@@ -35,7 +35,7 @@ function link2nthu(a) {
 		</p>
 	</form>
 	<table width="580" align="center" cellpadding="3" cellspacing="0" border="1">
-		<tr align=center><td width="60">編號</td><td width="200">被看望者</td><td width = "200">備註</td><td width = "60">修改</td><td width = "60">刪除</td></tr>
+		<tr align=center><td width="60">編號</td><td width="100">被看望者</td><td width = "400">備註</td><td width = "60">修改</td><td width = "60">刪除</td></tr>
 		<?php
 		$sql =<<<EOF
 				SELECT * from namelist order by id;
@@ -47,7 +47,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td valign=\"top\" align=\"left\">". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td><a href='update-namelist.php?id=$row[0]&name=$row[1]&remark=$row[2]'>編輯</a></td><td><a href='javascript:link2nthu($row[0])'>刪除</a></td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td><a href='update-namelist.php?id=$row[0]&name=$row[1]&remark=$row[2]'>編輯</a></td><td><a href='javascript:link2nthu($row[0])'>刪除</a></td></tr>";
 					}
 				pg_close($db);
 
