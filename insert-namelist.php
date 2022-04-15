@@ -39,7 +39,7 @@ EOF;
 	exit;
 	} 
 	while($row = pg_fetch_row($ret)){
-		if($row[0]==$name && $row[1]==$phone)
+		if($row[0]==$name && $row[1]==$remark)
 		{
 			echo "<script>if(confirm('已有相同資料，請確認後再填寫!')){document.location.href='CUD-namelist-show.php'};</script>";
 			pg_close($db);
