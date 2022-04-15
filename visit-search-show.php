@@ -30,7 +30,7 @@
 		</p>
 	</form>
 	<table width="580" align="center" cellpadding="3" cellspacing="0" border="1">
-		<tr align=center><td width="100">被看望者</td><td width="100">日期</td><td width = "100">看望者</td><td width = "500">情&nbsp形</td><td width = "500">備&nbsp註</td></tr>
+		<tr align=center><td width="100">被看望者</td><td width="100">日期</td><td width = "100">看望者</td><td width = "300">情&nbsp形</td><td width = "300">備&nbsp註</td></tr>
 		<?php
 			if($name!=null && $date==null)
 			{
