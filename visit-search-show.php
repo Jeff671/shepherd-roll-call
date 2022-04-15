@@ -44,7 +44,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td width = '300'>".$row[2]."</td><td width = '300'>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td width = '300'>".$row[2]."</td><td width = '300'>".$row[3]."</td><td width = '300'>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
@@ -60,7 +60,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td width = '300'>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td width = '300'>".$row[3]."</td><td width = '300'>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
@@ -76,7 +76,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td width = '300'>".$row[3]."</td><td>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td width = '300'>".$row[3]."</td><td width = '300'>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
@@ -92,7 +92,7 @@ EOF;
 				exit;
 				} 
 				while($row = pg_fetch_row($ret)){
-					echo "<tr align=center><td width = '100'>". $row[0] . "</td><td width = '100'>".$row[1]."</td><td width = '100'>".$row[2]."</td><td width = '300'>".$row[3]."</td><td width = '300'>".$row[4]."</td></tr>";
+					echo "<tr align=center><td>". $row[0] . "</td><td>".$row[1]."</td><td>".$row[2]."</td><td width = '300'>".$row[3]."</td><td width = '300'>".$row[4]."</td></tr>";
 					}
 				pg_close($db);
 			}
